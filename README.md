@@ -5,7 +5,8 @@ The goal of this assignment is to understand steps of modifying, compiling and i
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine.
+These instructions will get you a copy of the project up and running on your local machine. You should try this on the virtual machine because it can break your system easily. \
+I use VirtualBox 6.0 tool.
 
 ### Prerequisites
 
@@ -41,3 +42,21 @@ Run the following command to check the result, it should print your kernel versi
 ```
 uname -r
 ```
+
+### Trim the kernel
+
+When install the kernel, it will take a long time to compile because it will include support for nearly everything so it is a general use and huge. \
+You can trim your kernel with the following code:
+
+```
+$ make nconfig
+```
+
+For use in this course, I config the kernel with this code and select "No" with all the config:
+
+```
+$ make localmodconfig
+```
+
+## Running the test
+
