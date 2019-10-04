@@ -57,7 +57,7 @@ For use in this course, I config the kernel with this code and select "No" with 
 ```
 $ make localmodconfig
 ```
-### Add system call to the kernel
+## Add system call to the kernel
 
 Create a folder with *sys_get_proc_info.c* and *Makefile* in linux-5.0.5/get_proc_info/ 
 
@@ -101,7 +101,7 @@ asmlinkage long sys_get_proc_info(pid_t pid, struct procinfos * info);
 ```
 Then reinstall the kernel.
 
-## Running the test
+### Running the test
 
 Compile *main.c* to see the test, the result should be my student ID (1752242), if yes, you successfully added the new system call to the kernel:
 ```
