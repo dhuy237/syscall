@@ -57,6 +57,34 @@ For use in this course, I config the kernel with this code and select "No" with 
 ```
 $ make localmodconfig
 ```
+### Add system call to the kernel
 
+Create a folder with *sys_get_proc_info.c* and *Makefile* in linux-5.0.5/get_proc_info/ \
+
+Then add get_proc_info/ to kernel Makefile:
+
+```
+$ pwd
+~/kernelbuild/linux-5.0.5 //the folder of your kernel source
+$ vim Makefile
+```
+Find the following line:
+
+```
+core-y += kernel/ mm/ fs/ ipc/ security/ crypto/ block/
+```
+
+And add get_proc_info/:
+
+```
+core-y += kernel/ mm/ fs/ ipc/ security/ crypto/ block/ get_proc_info/
+```
+
+Add the new system call to the system call table: 
+
+```
+$ cd arch/x86/entry/syscalls/
+$ echo "548 64 get_proc_info __x64_sys_get_proc_info" >> syscall_64.tbl
+```
 ## Running the test
 
