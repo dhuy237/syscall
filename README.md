@@ -33,7 +33,7 @@ Install the modules, we can run this stage in parallel by using tag "-j np", whe
 $ make -j 4 modules
 $ sudo make -j 4 install
 $ sudo make -j 4 modules_install
-$sudo make -j 4 install
+$ sudo make -j 4 install
 $ sudo reboot
 ```
 
