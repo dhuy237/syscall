@@ -15,12 +15,12 @@ int main(int argc, char* argv[])
     printf("Student ID: %ld\n", info.studentID);
     if (sys_return_value == 0)
     {
-        printf("Current pid: %d, %s\n", info.proc.pid, info.proc.name);
-        printf("Parent pid: %d\n", info.parent_proc.pid);
+        printf("Current pid: %d [%s]\n", info.proc.pid, info.proc.name);
+        printf("Parent pid: %d [%s]\n", info.parent_proc.pid, info.parent_proc.name);
         if (info.oldest_child_proc.pid == 0)
             printf("Dont have a child\n");
         else
-            printf("Child pid: %d, %s\n", info.oldest_child_proc.pid, info.oldest_child_proc.name);
+            printf("Child pid: %d [%s]\n", info.oldest_child_proc.pid, info.oldest_child_proc.name);
     }
     else
         printf("Not found\n");
