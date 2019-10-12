@@ -45,7 +45,7 @@ SYSCALL_DEFINE2(get_proc_info, pid_t, pid, struct procinfos *, info)
         
             info->parent_proc.pid = task_list->parent->pid;
             strcpy(info->parent_proc.name, task_list->parent->comm);
-            printk("child: [%d], %s\n", info->oldest_child_proc.pid, info->oldest_child_proc.name);
+            //printk("child: [%d], %s\n", info->oldest_child_proc.pid, info->oldest_child_proc.name);
             //printk("parent: [%d]\n", info->oldest_child_proc.pid);
             
             return 0;
